@@ -1,16 +1,16 @@
 package com.wix.RNCameraKit.camera.permission;
 
-import com.wix.RNCameraKit.camera.CameraModule;
+import com.wix.RNCameraKit.camera.CameraKitModule;
 
 public class CameraPermissionRequestCallback {
 
-    private CameraModule cameraModule;
+    private CameraKitModule cameraKitModule;
 
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        cameraModule.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        cameraKitModule.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
-    public void setCameraModule(CameraModule cameraModule) {
-        this.cameraModule = cameraModule;
+    public void setCameraKitModule(CameraKitModule cameraKitModule) {
+        this.cameraKitModule = cameraKitModule;
     }
 }
