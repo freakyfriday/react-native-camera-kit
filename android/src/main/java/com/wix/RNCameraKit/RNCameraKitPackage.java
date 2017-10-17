@@ -7,7 +7,7 @@ import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
-import com.wix.RNCameraKit.camera.CameraModule;
+import com.wix.RNCameraKit.camera.CameraKitModule;
 import com.wix.RNCameraKit.camera.CameraViewManager;
 import com.wix.RNCameraKit.camera.permission.CameraPermissionRequestCallback;
 import com.wix.RNCameraKit.gallery.GalleryViewManager;
@@ -36,11 +36,11 @@ public class RNCameraKitPackage implements ReactPackage {
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
 
-        CameraModule cameraModule = new CameraModule(reactContext);
+        CameraKitModule cameraKitModule = new CameraKitModule(reactContext);
         if (cameraPermissionRequestCallback != null) {
-            cameraPermissionRequestCallback.setCameraModule(cameraModule);
+            cameraPermissionRequestCallback.setCameraKitModule(cameraKitModule);
         }
-        modules.add(cameraModule);
+        modules.add(cameraKitModule);
 
         NativeGalleryModule galleryModule = new NativeGalleryModule(reactContext);
         if (storagePermissionRequestCallback != null) {
