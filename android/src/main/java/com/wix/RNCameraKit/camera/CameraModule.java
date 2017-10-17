@@ -11,12 +11,12 @@ import com.wix.RNCameraKit.camera.commands.Capture;
 import com.wix.RNCameraKit.camera.permission.CameraPermission;
 
 
-public class CameraModule extends ReactContextBaseJavaModule {
+public class CameraKitModule extends ReactContextBaseJavaModule {
 
     private final CameraPermission cameraPermission;
     private Promise checkPermissionStatusPromise;
 
-    public CameraModule(ReactApplicationContext reactContext) {
+    public CameraKitModule(ReactApplicationContext reactContext) {
         super(reactContext);
         cameraPermission = new CameraPermission();
         checkPermissionWhenActivityIsAvailable();
@@ -51,7 +51,7 @@ public class CameraModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "CameraModule";
+        return "CameraKitModule";
     }
 
     @ReactMethod
